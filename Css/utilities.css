@@ -1,0 +1,45 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+button{
+  max-width: max-content;
+  display: block;
+}
+
+/* Colors */
+
+:root{
+  --c1: hsl(0, 0%, 100%);
+  --c2: hsl(0, 0%, 63%);
+  --c3: hsl(0, 0%, 27%);
+  --c4: hsl(0, 0%, 0%);
+}
+
+.c1{
+  color: var(--c1);
+}
+
+.c2{
+  color: var(--c2);
+}
+
+.c3{
+  color: var(--c3);
+}
+
+.c4{
+  color: var(--c4);
+}
+
+
