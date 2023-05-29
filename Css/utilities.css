@@ -4,6 +4,7 @@
   box-sizing: border-box;
   list-style-type: none;
   text-decoration: none;
+  font-family: 'League Spartan', sans-serif;
 }
 
 img{
@@ -13,7 +14,6 @@ img{
 }
 
 button{
-  max-width: max-content;
   display: block;
 }
 
