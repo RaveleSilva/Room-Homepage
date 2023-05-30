@@ -20,6 +20,7 @@ nav{
   align-items: center;
   gap: 40px;
   padding: 40px;
+  position: relative;
 }
 
 nav ul{
@@ -50,6 +51,29 @@ nav ul a::after{
 
 nav ul a:hover::after{
   width: 30%;
+}
+
+.menu-hamburger{
+  width: 30px;
+  height: 24px;
+  background-image: url(../images/icon-hamburger.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  left: 20px;
+}
+
+#shadow{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  background-color: rgba(0, 0, 0, 0.514);
+  visibility: hidden;
 }
 
 article{
@@ -101,14 +125,14 @@ article{
   color: var(--c2);
 } 
 
-.article-buttons{
+article .buttons-div{
   position: absolute;
   bottom: 0;
   left: 0;
   display: flex;
 }
 
-.article-buttons button{
+.buttons-div button{
   background-color: var(--c4);
   width: 80px;
   height: 80px;
@@ -120,11 +144,11 @@ article{
   transition: 0.4s;
 }
 
-.article-buttons button:hover{
+.buttons-div button:hover{
   background-color: rgb(73, 73, 73);
 }
 
-.article-buttons button img{
+.buttons-div button img{
   width: 10px;
 }
 
@@ -163,5 +187,91 @@ section div:nth-child(3){
 
 section div:nth-child(3){
   background-image: url(../images/image-about-light.jpg);
+}
+
+@media (max-width: 950px){
+  body, section{
+    grid-template-columns: 1fr;
+  }
+
+  header{
+    background-size: contain;
+  }
+
+  header, article{
+    grid-column: 1/-1;
+  }
+
+  nav ul{
+    position: absolute;
+    background-color: var(--c1);
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 0vh;
+    align-items: center;
+    overflow: hidden;
+    transition: 0.4s;
+  }
+
+  nav ul li:nth-child(1){
+    margin-left: 15vw;
+  }
+
+  nav ul.active{
+    height: 15vh;
+    z-index: 1;
+  }
+
+  nav ul a{
+    color: var(--c4);
+  }
+
+  nav ul a::after{
+    background-color: var(--c4);
+  }
+
+  .menu-hamburger{
+    display: block;
+    z-index: 2;
+  }
+
+  .menu-hamburger.active{
+    background-image: url(../images/icon-close.svg);
+    top: 38px;
+  }
+
+  #shadow.active{
+    visibility: visible;
+  }
+
+  .logo{
+    position: absolute;
+    left: 40%;
+  }
+
+  .article-content{
+    padding: 40px 0px;
+  }
+
+  article .buttons-div{
+    display: none;
+  }
+
+  .section-content,
+  article{
+    padding: 20px;
+  }
+
+  section div{
+    width: 100vw;
+    height: 300px;
+  }
+}
+
+@media (max-width: 600px){
+  header{
+    height: 300px;
+  }
 }
 
