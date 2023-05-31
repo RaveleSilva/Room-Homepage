@@ -17,6 +17,10 @@ button{
   display: block;
 }
 
+a{
+  display: inline-block;
+}
+
 /* Colors */
 
 :root{
