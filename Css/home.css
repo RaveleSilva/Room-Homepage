@@ -1,5 +1,6 @@
 body{
-  background-color: darkslategrey;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
 }
 
 nav,
@@ -14,7 +15,9 @@ nav,
 
 header{
   padding: 60px;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 nav{
@@ -59,12 +62,109 @@ nav{
   display: none;
 }
 
+.main-img{
+  height: 80vh;
+}
+.main-img img{
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
+}
+
+.discover{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  position: relative;
+}
+
+.section-content{
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.section-content h1{
+  color: var(--c4);
+  font-size: 46px;
+  max-width: 16ch;
+  font-weight: 700;
+}
+
+.section-content p{
+  color: var(--c2);
+  font-size: 1rem;
+  max-width: 46ch;
+  font-weight: 500;
+}
+
+.section-content a{
+  color: var(--c4);
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 12px;
+  transition: 0.4s;
+}
+
+.section-content a:hover{
+  color: var(--c2);
+}
+
+.buttons-div{
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.buttons-div button{
+  height: 70px;
+  width: 70px;
+  background-color: var(--c4);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: 0.4s;
+}
+
+.buttons-div button:hover{
+  background-color: var(--c3);
+}
+
+.buttons-div button:nth-child(1)::after,
+.buttons-div button:nth-child(2)::after{
+  content: '';
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-image: url(../images/icon-angle-left.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  left: calc(50% - 10px);
+  top: calc(50% - 15px);
+}
+
+.buttons-div button:nth-child(2)::after{
+  background-image: url(../images/icon-angle-right.svg);
+  left: calc(50% - 10px);
+}
+
 @media (max-width: 950px){
+  body{
+    grid-template-columns: 1fr;
+  }
+
+  header{
+    width: 100%;
+  }
+
   .logo{
     position: absolute;
-    right: calc(50% - 50px);
+    left: calc(50% - 50px);
   }
-  
+
   .nav-links{
     position: absolute;
     top: 0px;
@@ -97,6 +197,10 @@ nav{
   .menu-hamburger.active{
     background-image: url(../images/icon-close.svg);
   }
+
+  .buttons-div{
+    display: none;
+  }
 }
 
 @media (max-width: 600px){
@@ -108,5 +212,9 @@ nav{
 @media (max-width: 400px){
   .nav-links{
     padding-left: 68px;
+  }
+
+  .section-content h1{
+    font-size: 34px;
   }
 }
