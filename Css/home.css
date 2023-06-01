@@ -19,7 +19,6 @@ header{
   position: absolute;
   top: 0;
   left: 0;
-
 }
 
 nav{
@@ -102,11 +101,13 @@ nav{
   font-weight: 700;
 }
 
-.section-content p{
+.section-content p,
+.furniture-content p{
   color: var(--c2);
   font-size: 1rem;
   max-width: 46ch;
   font-weight: 500;
+  line-height: 1.3;
 }
 
 .section-content a{
@@ -189,13 +190,9 @@ nav{
 
 .furniture-content h1{
   text-transform: uppercase;
-  letter-spacing: 8px;
-  font-size: 20px;
+  letter-spacing: 6px;
+  font-size: 18px;
   font-weight: 600;
-}
-
-.furniture-content p{
-  color: var(--c2);
 }
 
 @media (max-width: 950px){
@@ -269,7 +266,7 @@ nav{
 
 @media (max-width: 600px){
   header{
-    padding: 60px 20px;
+    padding: calc(11vh - 9px) 20px;
   }
 }
 
